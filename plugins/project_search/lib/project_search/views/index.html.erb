@@ -90,6 +90,13 @@
       }
     });
     $('#query').trigger('keyup');
+    
+    $('#query').keydown(function(ev) {
+      keychar = String.fromCharCode(ev.which).toUpperCase();
+      if (ev.metaKey && keychar == "A") {
+        this.select();
+      }
+    });
 
     $('#toggle_recent_queries').click(function(ev) {
       ev.preventDefault();
